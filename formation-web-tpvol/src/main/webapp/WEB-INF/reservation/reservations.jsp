@@ -32,8 +32,8 @@
 						<td><fmt:formatDate value="${reservation.dateResa}" pattern="dd/MM/yyyy"/></td>
 						<td>${reservation.numero}</td>
 						<td>${reservation.vol.id}</td>
-						<td>${reservation.client}</td>	
-						<td><a href="loadPassager?id=${reservation.vol.id}" /a>Passagers</td> 	
+						<td>${reservation.client.id}</td>	
+						<td>${reservation.passager.id}</td> 	
 									
 						<td><a href="edit?id=${reservation.id}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>
 						<td><a href="delete?id=${reservation.id}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
