@@ -29,8 +29,14 @@ public class PassagerCtrl {
 		
 
 		@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
-		public String list(Model model) {
-			List<Passager> list = passagerDao.findAll();
+		public String list(@RequestParam(required = false) Long idVol, Model model) {
+			List<Passager> list = null;
+			if (idVol != null) {
+				//list = PassagerDao.findAll(idVol);
+			} else {
+				//list = PassagerDao.findAll();
+			}
+			 //= passagerDao.findAll();
 			
 			model.addAttribute("passagers", list);
 			return "passager/passagers";
@@ -79,7 +85,8 @@ public class PassagerCtrl {
 			
 			return "forward:list";
 		}
-
+		
+		
 	}
 
 

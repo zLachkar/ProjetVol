@@ -61,8 +61,7 @@ public class VolController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add(Model model) {
-		System.out.println("entrando");
-		
+
 		model.addAttribute("vol", new Vol());
 		model.addAttribute("aeroports",aeroportDao.findAll() );
 		model.addAttribute("CA", compagnieAerienneDao.findAll());
@@ -108,7 +107,7 @@ public class VolController {
 	public String RESA(@RequestParam Long id, Model model) {
 		List<Reservation> LRALL=reservationDao.findAll();
 		List<Reservation> LR=new ArrayList<Reservation>();
-		System.out.println("reservationDao.findAll().size"+reservationDao.findAll().size());
+		
 		
 		for(int i=0;i<LRALL.size();i++){
 			if(LRALL.get(i).getVol().equals((volDao.find(id)))){

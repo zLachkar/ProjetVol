@@ -93,11 +93,14 @@ public class ReservationCtrl {
 	}
 	
 	@RequestMapping(value = "/loadPassager", method = RequestMethod.GET)
-	public String loadPassager(@RequestParam Long id, Model model) {
+	public String loadPassager(@RequestParam(required = false) Long idVol, Model model) {
 		
-		model.addAttribute("passager", reservationDao.find(id).getPassager());
-		model.addAttribute("reservation", reservationDao.find(id));
 		
+		List<Passager> list = null;
+		if (idVol != null) {
+			list = reservationDao.findAllPassenger(idVol);
+		}
+		model.addAttribute("passagers", list);
 		return "passager/passagers";
 	}
 	

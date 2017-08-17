@@ -34,7 +34,7 @@
 		<td><a href="${loginUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnLogin"/>" />  </a></td>
 	</tr>
 	<tr>
-		<td><a href="${cieaUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnCompagnieAerienne"/>" />  </a></td>
+		<td><a href="/COMPA/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnCompagnieAerienne"/>" />  </a></td>
 		<td><a href="${aeroUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnAeroport"/>" /> </a></td>
 		<td><a href="${villeUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnVille"/>" />  </a></td>
 	</tr>
