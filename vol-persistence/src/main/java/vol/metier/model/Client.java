@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
+import org.hibernate.validator.constraints.Email;
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type", length = 15, discriminatorType = DiscriminatorType.STRING)
@@ -26,6 +28,7 @@ public abstract class Client {
 	private String nom;
 	private String numeroTel;
 	private String numeroFax;
+	@Email
 	private String email;
 	private Login login;
 	private Adresse adresse;

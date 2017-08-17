@@ -18,7 +18,7 @@ import vol.metier.dao.LoginDao;
 import vol.metier.model.Login;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController {
 
 	@Autowired
@@ -47,7 +47,7 @@ public class LoginController {
 		return "login/login2";
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/list", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<Login> list = loginDao.findAll();
 
@@ -57,7 +57,7 @@ public class LoginController {
 		return "login/logins";
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/add", method = RequestMethod.GET)
 	public String add(Model model) {
 
 		model.addAttribute("login", new Login());
@@ -66,7 +66,7 @@ public class LoginController {
 		return "login/loginEdit";
 	}
 
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/edit", method = RequestMethod.GET)
 	public String edit(@RequestParam Long id, Model model) {
 		model.addAttribute("login", loginDao.find(id));
 		model.addAttribute("clients", clientDao.findAll());
@@ -74,7 +74,7 @@ public class LoginController {
 		return "login/loginEdit";
 	}
 
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/login/save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("login") @Valid Login login, BindingResult result) {
 		if (result.hasErrors()) {
 			return "login/loginEdit";
@@ -89,7 +89,7 @@ public class LoginController {
 		return "redirect:list";
 	}
 
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/delete", method = RequestMethod.GET)
 	public String delete(@RequestParam Long id, Model model) {
 
 		loginDao.delete(loginDao.find(id));
@@ -97,7 +97,7 @@ public class LoginController {
 		return "forward:list";
 	}
 
-	@RequestMapping(value = "/cancel", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/cancel", method = RequestMethod.GET)
 	public String cancel() {
 
 		return "forward:list";

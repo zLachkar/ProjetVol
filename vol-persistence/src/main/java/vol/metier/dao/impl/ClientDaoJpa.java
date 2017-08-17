@@ -30,14 +30,29 @@ public class ClientDaoJpa implements ClientDao {
 	public Client find(Long id) {
 		return em.find(Client.class, id);
 	}
-
+	@Transactional(readOnly=true)
+	public Client findByTitre(String titre) {
+		return em.find(Client.class, titre);
+	}
 	@Override
 	@Transactional(readOnly=true)
 	public List<Client> findAll() {
 		Query query = em.createQuery("from Client c left outer join fetch c.login");
 		return query.getResultList();
 	}
-
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<Client> findAllClientMoral() {
+		Query query = em.createQuery("from ClientMoral c left outer join fetch c.login");
+		return query.getResultList();
+	}
+	@Override
+	@Transactional(readOnly=true)
+	public List<Client> findAllClientPhysique() {
+		Query query = em.createQuery("from ClientPhysique c left outer join fetch c.login");
+		return query.getResultList();
+	}
 	@Override
 	public void create(Client client) {
 		em.persist(client);
