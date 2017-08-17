@@ -20,6 +20,8 @@
 					<th><spring:message code="reservations.id"/></th>
 					<th><spring:message code="reservations.dateResa"/></th>
 					<th><spring:message code="reservations.numero"/></th>
+					<th>Vol</th>
+					<th>Client</th>
 					<th><spring:message code="reservations.passager"/></th>
 					<th></th><th></th>
 				</tr>
@@ -28,8 +30,11 @@
 					<tr>
 						<td>${reservation.id}</td>
 						<td><fmt:formatDate value="${reservation.dateResa}" pattern="dd/MM/yyyy"/></td>
-						<td>${reservation.numero}</td>	
-						<td><a href="loadPassager?id=${reservation.id}" /a>Liste passagers</td> 					
+						<td>${reservation.numero}</td>
+						<td>${reservation.vol}</td>
+						<td>${reservation.client}</td>	
+						<td><a href="loadPassager?id=${reservation.vol.id}" /a>Passagers</td> 	
+									
 						<td><a href="edit?id=${reservation.id}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>
 						<td><a href="delete?id=${reservation.id}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
 						<th></th>

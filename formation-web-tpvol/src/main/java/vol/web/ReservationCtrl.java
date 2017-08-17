@@ -19,6 +19,7 @@ import vol.metier.dao.ReservationDao;
 import vol.metier.dao.VolDao;
 import vol.metier.model.Passager;
 import vol.metier.model.Reservation;
+import vol.metier.model.Vol;
 
 @Controller
 @RequestMapping("/reservation")
@@ -30,7 +31,6 @@ public class ReservationCtrl {
 	private PassagerDao passagerDao;
 	@Autowired
 	private ClientDao clientDao;
-
 	@Autowired
 	private VolDao volDao;
 
@@ -50,22 +50,27 @@ public class ReservationCtrl {
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String add(Model model) {
 
+		model.addAttribute("passagers", passagerDao.findAll());
+		model.addAttribute("vols", volDao.findAll());
 		model.addAttribute("reservation", new Reservation());
 		return "reservation/reservationEdit";
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String edit(@RequestParam Long id, Model model) {
-
+	
+		model.addAttribute("passagers", passagerDao.findAll());
+		model.addAttribute("vols",  volDao.findAll());	
 		model.addAttribute("reservation", reservationDao.find(id));
 
 		return "reservation/reservationEdit";
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("reservation") @Valid Reservation reservation, BindingResult result,
-			Model model) {
+	public String save(@ModelAttribute("reservation") @Valid Reservation reservation, BindingResult result, Model model) {
 		if (result.hasErrors()) {
+			model.addAttribute("passagers", passagerDao.findAll());
+			model.addAttribute("vols",  volDao.findAll());	
 			return "reservation/reservationEdit";
 		}
 
