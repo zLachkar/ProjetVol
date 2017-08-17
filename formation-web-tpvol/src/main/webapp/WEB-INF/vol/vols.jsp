@@ -11,8 +11,7 @@
 <title>Liste des Vols</title>
 </head>
 <body>
-
-
+<jsp:include page="/WEB-INF/menu.jsp" />
 <div class="container">
 		<fieldset>
 			<legend>Liste des Vols</legend>

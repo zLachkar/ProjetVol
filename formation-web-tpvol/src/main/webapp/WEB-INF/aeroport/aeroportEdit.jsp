@@ -13,28 +13,30 @@
 <title>Edit Aeroport</title>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/menu.jsp" />
 	<div class="container">
 		<fieldset>
 			<legend>Edit Aeroport</legend>
 			<form:form modelAttribute="aeroport" action="save" method="post">
 				<form:hidden path="id" />
 				<form:hidden path="version" />
-				
+
 				<div class="form-group">
 					<form:label path="nom">Nom</form:label>
-					<form:input path="nom" type="text" cssClass="form-control" cssStyle="width: 400px"  readonly="${mode == 'edit'}"/>	
-					<FONT color="red">	<form:errors path="nom" cssClass="error" /></FONT>
+					<form:input path="nom" type="text" cssClass="form-control"
+						cssStyle="width: 400px" readonly="${mode == 'edit'}" />
+					<FONT color="red"> <form:errors path="nom" cssClass="error" /></FONT>
 				</div>
-				
+
 				<div class="form-group">
-					<label for="idVille" path="villes">Villes</label>
-					<select  name="idVille" cssClass="form-control" cssStyle="width: 400px">
+					<label for="idVille" path="villes">Villes</label> <select
+						name="idVille" cssClass="form-control" cssStyle="width: 400px">
 						<c:forEach items="${villes}" var="civ">
 							<option value="${civ.id}">${civ.nom}</option>
 						</c:forEach>
 					</select>
-				</div>			
-			<%-- 	<div class="form-group">
+				</div>
+				<%-- 	<div class="form-group">
 					<label for="idFormateur"><spring:message code="eleveEdit.formateur"/></label>
 					<select name="idFormateur" cssClass="form-control" cssStyle="width: 400px">
 						<c:forEach items="${formateurs}" var="formateur">
@@ -42,12 +44,12 @@
 						</c:forEach>
 					</select>
 				</div> --%>
-			
+
 				<button class="btn btn-success" type="submit">
 					<span class="glyphicon glyphicon-ok"></span>
 				</button>
-				<a href="cancel" class="btn btn-warning">
-					<span class="glyphicon glyphicon-arrow-left"></span>
+				<a href="cancel" class="btn btn-warning"> <span
+					class="glyphicon glyphicon-arrow-left"></span>
 				</a>
 			</form:form>
 		</fieldset>

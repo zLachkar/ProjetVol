@@ -10,35 +10,44 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<title><spring:message code="reservationEdit.title"/></title>
+<title><spring:message code="reservationEdit.title" /></title>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/menu.jsp" />
 	<div class="container">
 		<fieldset>
-			<legend><spring:message code="reservationEdit.fieldset"/></legend>
+			<legend>
+				<spring:message code="reservationEdit.fieldset" />
+			</legend>
 			<form:form modelAttribute="reservation" action="save" method="post">
 				<form:hidden path="id" />
-				<form:hidden path="version" />		
-				
+				<form:hidden path="version" />
+
 				<div class="form-group">
-					<form:label path="dateResa"><spring:message code="reservationEdit.dateResa"/></form:label>
-					<form:input path="dateResa" type="date" cssClass="form-control" cssStyle="width: 400px"/>
-				<form:errors path="dateResa" /> 
+					<form:label path="dateResa">
+						<spring:message code="reservationEdit.dateResa" />
+					</form:label>
+					<form:input path="dateResa" type="date" cssClass="form-control"
+						cssStyle="width: 400px" />
+					<form:errors path="dateResa" />
 				</div>
-				
+
 				<div class="form-group">
-					<form:label path="numero"><spring:message code="reservationEdit.numero"/></form:label>
-					<form:input path="numero" type="text" cssClass="form-control" cssStyle="width: 400px"/>
-				 <form:errors path="numero" /> 
+					<form:label path="numero">
+						<spring:message code="reservationEdit.numero" />
+					</form:label>
+					<form:input path="numero" type="text" cssClass="form-control"
+						cssStyle="width: 400px" />
+					<form:errors path="numero" />
 				</div>
-				
-				
-			
+
+
+
 				<button class="btn btn-success" type="submit">
 					<span class="glyphicon glyphicon-ok"></span>
 				</button>
-				<a href="cancel" class="btn btn-warning">
-					<span class="glyphicon glyphicon-arrow-left"></span>
+				<a href="cancel" class="btn btn-warning"> <span
+					class="glyphicon glyphicon-arrow-left"></span>
 				</a>
 			</form:form>
 		</fieldset>
