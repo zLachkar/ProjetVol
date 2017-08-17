@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vol.metier.dao.ClientDao;
 import vol.metier.dao.LoginDao;
+import vol.metier.dao.VolDao;
 import vol.metier.model.Client;
 import vol.metier.model.Login;
+import vol.metier.model.Vol;
 
 @Controller
 @RequestMapping("/")
@@ -27,6 +29,8 @@ public class LoginController {
 	
 	@Autowired
 	private ClientDao clientDao;
+	@Autowired
+	private VolDao volDao;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String log(Model model) {
@@ -66,6 +70,19 @@ public class LoginController {
 		
 		return "login/loginEdit";
 	}
+//	@RequestMapping(value = "/loadVol", method = RequestMethod.GET)
+//	public String loadVol(Model model,@RequestParam Long idVol) {
+//		
+//		//List<Vol> lv=volDao.findAll();
+//		reser
+//		for(int i=0;i<lv.size();i++){
+//			lv.get(i).
+//		}
+//		
+//		model.addAttribute("clients", clientDao.findAll());
+//		
+//		return "login/loginEdit";
+//	}
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String edit(@RequestParam Long id, Model model) {
