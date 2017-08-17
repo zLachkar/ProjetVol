@@ -30,7 +30,13 @@ public class PassagerCtrl {
 
 		@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
 		public String list(Model model) {
-			List<Passager> list = passagerDao.findAll();
+			/*List<Passager> list = null;
+			if (idResa != null) {
+					list = passagerDao.findAll(idResa);
+			} else {
+				list = passagerDao.findAll();
+			}*/
+			List<Passager> list=passagerDao.findAll();
 			
 			model.addAttribute("passagers", list);
 			return "passager/passagers";
@@ -79,7 +85,8 @@ public class PassagerCtrl {
 			
 			return "forward:list";
 		}
-
+		
+		
 	}
 
 

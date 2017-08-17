@@ -98,12 +98,14 @@ public class ReservationCtrl {
 		return "forward:list";
 	}
 	
-	@RequestMapping(value = "/loadPassager", method = RequestMethod.GET)
-	public String loadPassager(@RequestParam Long id, Model model) {
-		
-		model.addAttribute("passager", reservationDao.find(id).getPassager());
-		model.addAttribute("reservation", reservationDao.find(id));
-		
+	@RequestMapping(value = "/loadPassenger", method = RequestMethod.GET)
+	public String loadPassenger(@RequestParam(required = false) Long idRes, Model model) {
+	
+		List<Passager> listPassenger= new ArrayList<Passager>();
+		listPassenger.add(reservationDao.find(idRes).getPassager());
+	
+		model.addAttribute("passagers", listPassenger);
+	
 		return "passager/passagers";
 	}
 	
@@ -112,7 +114,7 @@ public class ReservationCtrl {
 		List<Vol> LV= new ArrayList<Vol>();
 		LV.add(reservationDao.find(idRes).getVol());
 	
-		model.addAttribute("voles", LV);
+		model.addAttribute("vols", LV);
 		
 		return "vol/vols";
 	}
