@@ -19,7 +19,7 @@ import vol.metier.model.Client;
 import vol.metier.model.Login;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController {
 
 	@Autowired
@@ -28,7 +28,27 @@ public class LoginController {
 	@Autowired
 	private ClientDao clientDao;
 
-	@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String log(Model model) {
+		
+		return "login/login2";
+	}
+	@RequestMapping(value = "/verification", method = RequestMethod.POST)
+	public String save(@RequestParam String login,@RequestParam String pass, Model model) {
+		
+		List<Login> Lo=loginDao.findAll();
+		for(int i=0;i<Lo.size();i++){
+			if(Lo.get(i).getLogin().equals(login) && Lo.get(i).getMotDePasse().equals(pass) ){
+				return "home";
+				
+			}
+		}
+		
+		return "login/login2";
+	}
+
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<Login> list = loginDao.findAll();
 		
