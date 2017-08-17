@@ -11,5 +11,5 @@ public interface ReservationDao extends Dao<Reservation, Long> {
 	Reservation find(int numero);
 	List<Reservation> findAll(Long idVol);
 	
-	List<Passager> findAllPassenger(Long idVol);
+	//List<Passager> findAllPassenger(Long idVol);
 }

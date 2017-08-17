@@ -78,11 +78,10 @@ public class PassagerDaoJpa implements PassagerDao{
 	@Override
 	public List<Passager> findAll(Long idVol) {
 		
-			/*Query query = em.createQuery("from Passager p where r.vol.id=:idVol");
-			query.setParameter("idVol", idVol);
+			Query query = em.createQuery("from Passager p where r.vol.id=:idVol");
+			//query.setParameter("idVol", idVol);
 			return query.getResultList();
-		}*/
-		return null;
+
 	}
 
 

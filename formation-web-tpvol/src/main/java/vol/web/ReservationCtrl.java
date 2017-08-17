@@ -92,7 +92,7 @@ public class ReservationCtrl {
 		return "forward:list";
 	}
 	
-	@RequestMapping(value = "/loadPassager", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/loadPassager", method = RequestMethod.GET)
 	public String loadPassager(@RequestParam(required = false) Long idVol, Model model) {
 		
 		
@@ -102,6 +102,6 @@ public class ReservationCtrl {
 		}
 		model.addAttribute("passagers", list);
 		return "passager/passagers";
-	}
+	}*/
 	
 }

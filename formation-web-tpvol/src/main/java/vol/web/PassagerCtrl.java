@@ -32,11 +32,11 @@ public class PassagerCtrl {
 		public String list(@RequestParam(required = false) Long idVol, Model model) {
 			List<Passager> list = null;
 			if (idVol != null) {
-				//list = PassagerDao.findAll(idVol);
+					list = passagerDao.findAll(idVol);
 			} else {
-				//list = PassagerDao.findAll();
+				list = passagerDao.findAll();
 			}
-			 //= passagerDao.findAll();
+			 //passagerDao.findAll();
 			
 			model.addAttribute("passagers", list);
 			return "passager/passagers";
