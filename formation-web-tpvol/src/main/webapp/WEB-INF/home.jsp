@@ -13,20 +13,30 @@
 <body>
 <jsp:include page="menu.jsp" />
 <div class="container">
-<table>
+
+<c:url value="/reservation/" var="resaUrl"/>
+<c:url value="/vol/" var="volUrl"/>
+<c:url value="/passager/" var="passUrl"/>
+<c:url value="/client/" var="cliUrl"/>
+<c:url value="/login/" var="loginUrl"/>
+<c:url value="/compagnieaerienne/" var="cieaUrl"/>
+<c:url value="/aeroport/" var="aeroUrl"/>
+<c:url value="/ville/" var="villeUrl"/>
+
+<table> 
 	<tr>
-		<td><a href="reservation/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnReservation"/>" />  </a></td>
-		<td><a href="vol/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnVol"/>" />  </a></td>
+		<td><a href="${resaUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnReservation"/>" />  </a></td>
+		<td><a href="${volUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnVol"/>" />  </a></td>
 	</tr>
 	<tr>
-		<td><a href="passager/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnPassager"/>" />  </a>	</td>
-		<td><a href="client/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnClient"/>" />  </a></td>
-		<td><a href="login/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnLogin"/>" />  </a></td>
+		<td><a href="${passUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnPassager"/>" />  </a>	</td>
+		<td><a href="${cliUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnClient"/>" />  </a></td>
+		<td><a href="${loginUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnLogin"/>" />  </a></td>
 	</tr>
 	<tr>
-		<td><a href="compagnieaerienne/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnCompagnieAerienne"/>" />  </a></td>
-		<td><a href="aeroport/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnAeroport"/>" /> </a></td>
-		<td><a href="ville/"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnVille"/>" />  </a></td>
+		<td><a href="${cieaUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnCompagnieAerienne"/>" />  </a></td>
+		<td><a href="${aeroUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnAeroport"/>" /> </a></td>
+		<td><a href="${villeUrl}"> <input type="button" class="btn btn-primary btn-lg" value="<spring:message code="home.btnVille"/>" />  </a></td>
 	</tr>
 	
 	

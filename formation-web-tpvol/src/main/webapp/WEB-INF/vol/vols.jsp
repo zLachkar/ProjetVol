@@ -45,7 +45,7 @@
 						<td><span class="glyphicon glyphicon-plane"></span>${vol.arrivee.nom}</td>
 						<td><a href="escales?id=${vol.id}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-plane"></span></a></td>
 						<!-- <button type="button" class="btn btn-primary">Primary <span class="badge">7</span></button> -->
-						<td><a href="COMPA?id=${vol.id}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-send"></span>   </a></td>
+						<td><a href="COMPA?id=${vol.id}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-list-alt"></span>   </a></td>
 						<td><a href="../reservation/list?idVol=${vol.id}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-list-alt"></span>   </a></td>
 						<%-- <td><a href="COMPA?id=${vol.id}" class="btn btn-info btn-xs">   <span class="glyphicon glyphicon-send"></span>   </a></td> --%>
 						<td><a href="edit?id=${vol.id}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>
