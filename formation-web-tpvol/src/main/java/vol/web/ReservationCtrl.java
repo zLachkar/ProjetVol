@@ -1,5 +1,6 @@
 package vol.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -19,6 +20,7 @@ import vol.metier.dao.ReservationDao;
 import vol.metier.dao.VolDao;
 import vol.metier.model.Passager;
 import vol.metier.model.Reservation;
+import vol.metier.model.Vol;
 
 @Controller
 @RequestMapping("/reservation")
@@ -92,16 +94,25 @@ public class ReservationCtrl {
 		return "forward:list";
 	}
 	
-	/*@RequestMapping(value = "/loadPassager", method = RequestMethod.GET)
-	public String loadPassager(@RequestParam(required = false) Long idVol, Model model) {
-		
-		
-		List<Passager> list = null;
-		if (idVol != null) {
-			list = reservationDao.findAllPassenger(idVol);
-		}
-		model.addAttribute("passagers", list);
+	@RequestMapping(value = "/loadPassenger", method = RequestMethod.GET)
+	public String loadPassenger(@RequestParam(required = false) Long idRes, Model model) {
+	
+		List<Passager> listPassenger= new ArrayList<Passager>();
+		listPassenger.add(reservationDao.find(idRes).getPassager());
+	
+		model.addAttribute("passagers", listPassenger);
+	
 		return "passager/passagers";
-	}*/
+	}
+	
+	@RequestMapping(value = "/loadVol", method = RequestMethod.GET)
+	public String loadVol(Model model,@RequestParam Long idRes) {
+		List<Vol> LV= new ArrayList<Vol>();
+		LV.add(reservationDao.find(idRes).getVol());
+	
+		model.addAttribute("vols", LV);
+		
+		return "vol/vols";
+	}
 	
 }

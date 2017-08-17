@@ -31,7 +31,7 @@
 					<th></th>
 				</tr>
 
-				<c:forEach items="${voles}" var="vol">
+				<c:forEach items="${vols}" var="vol">
 					<tr>
 						<td>${vol.id}</td>
 						<td><fmt:formatDate value="${vol.dateDepart}" pattern="dd/MM/yyyy"/></td>
