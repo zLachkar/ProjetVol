@@ -41,7 +41,31 @@
 					<form:errors path="numero" />
 				</div>
 
-
+				<div class="form-group">
+					<form:label path="vol">
+						<spring:message code="reservationEdit.vol" />
+					</form:label>
+					<form:select path="vol.id">
+						<option disabled selected>Choisir Vol!</option>
+						<c:forEach items="${vols}" var="vol">
+							<form:option value="${vol.id}">|${vol.dateDepart} -
+								${vol.heureDepart}| ${vol.depart.nom} -> ${vol.arrivee.nom}
+								|${vol.dateArrivee} - ${vol.heureArrivee}| </form:option>
+						</c:forEach>
+					</form:select>
+				</div>
+				
+				<div class="form-group">
+					<form:label path="passager">
+						<spring:message code="reservationEdit.passager" />
+					</form:label>
+					<form:select path="passager.id" >
+						<option disabled selected>Choisir Passager!</option>
+						<c:forEach items="${passagers}" var="passager">
+							<option value="${passager.id}"> ${passager.nom}  ${passager.prenom}</option>
+						</c:forEach>
+					</form:select>
+				</div>
 
 				<button class="btn btn-success" type="submit">
 					<span class="glyphicon glyphicon-ok"></span>
