@@ -31,7 +31,7 @@
 						<td>${reservation.id}</td>
 						<td><fmt:formatDate value="${reservation.dateResa}" pattern="dd/MM/yyyy"/></td>
 						<td>${reservation.numero}</td>
-						<td>${reservation.vol}</td>
+						<td>${reservation.vol.id}</td>
 						<td>${reservation.client}</td>	
 						<td><a href="loadPassager?id=${reservation.vol.id}" /a>Passagers</td> 	
 									

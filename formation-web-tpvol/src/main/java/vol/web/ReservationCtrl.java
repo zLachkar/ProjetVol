@@ -1,5 +1,6 @@
 package vol.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -104,6 +105,16 @@ public class ReservationCtrl {
 		model.addAttribute("reservation", reservationDao.find(id));
 		
 		return "passager/passagers";
+	}
+	
+	@RequestMapping(value = "/loadVol", method = RequestMethod.GET)
+	public String loadVol(Model model,@RequestParam Long idRes) {
+		List<Vol> LV= new ArrayList<Vol>();
+		LV.add(reservationDao.find(idRes).getVol());
+	
+		model.addAttribute("voles", LV);
+		
+		return "vol/vols";
 	}
 	
 }
