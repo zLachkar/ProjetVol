@@ -13,6 +13,7 @@
 <title>Edit Vol</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/menu.jsp" />
 	<div class="container">
 		<fieldset>
 			<legend>Edit vol</legend>

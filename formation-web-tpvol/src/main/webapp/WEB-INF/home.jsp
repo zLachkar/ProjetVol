@@ -39,7 +39,7 @@ a {
 	<jsp:include page="menu.jsp" />
 	<div class="container">
 		<div class="tile">
-			<a href="reservation/"> <span
+			<a href = "<c:url value= "/reservation/" />"> <span
 				class="span-text glyphicon glyphicon-check"> <spring:message
 						code="home.btnReservation" />
 			</span>
@@ -54,7 +54,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#16a085">
-			<a href="passager/"> <span
+			<a href = "<c:url value= "/passager/" />"> <span
 				class="span-text glyphicon glyphicon-user"> <spring:message
 						code="home.btnPassager" />
 			</span>
@@ -62,7 +62,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#f1c40f">
-			<a href="client/"> <span
+			<a href = "<c:url value= "/client/" />"> <span
 				class="span-text glyphicon glyphicon-user"> <spring:message
 						code="home.btnClient" />
 			</span>
@@ -70,7 +70,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#27ae60">
-			<a href="login/"> <span
+			<a href = "<c:url value= "/login/" />"> <span
 				class="span-text glyphicon glyphicon-user"> <spring:message
 						code="home.btnLogin" />
 			</span>
@@ -78,7 +78,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#f39c12">
-			<a href="compagnieaerienne/"> <span
+			<a href = "<c:url value= "/compagnieaerienne/" />"> <span
 				class="span-text glyphicon glyphicon-home"> <spring:message
 						code="home.btnCompagnieAerienne" />
 			</span>
@@ -86,7 +86,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#2980b9">
-			<a href="aeroport/"> <span
+			<a href = "<c:url value= "/aeroport/" />"> <span
 				class="span-text glyphicon glyphicon-plane"> <spring:message
 						code="home.btnAeroport" />
 			</span>
@@ -94,7 +94,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#9b59b6">
-			<a href="ville/"> <span
+			<a href = "<c:url value= "/ville/" />"> <span
 				class="span-text glyphicon glyphicon-home"> <spring:message
 						code="home.btnVille" />
 			</span>

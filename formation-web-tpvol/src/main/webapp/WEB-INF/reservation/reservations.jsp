@@ -11,8 +11,7 @@
 <title><spring:message code="reservations.title"/></title>
 </head>
 <body>
-
-
+<jsp:include page="/WEB-INF/menu.jsp" />
 <div class="container">
 		<fieldset>
 			<legend><spring:message code="reservations.fieldset"/></legend>
