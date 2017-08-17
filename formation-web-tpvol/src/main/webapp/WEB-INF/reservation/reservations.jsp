@@ -20,7 +20,7 @@
 					<th><spring:message code="reservations.id"/></th>
 					<th><spring:message code="reservations.dateResa"/></th>
 					<th><spring:message code="reservations.numero"/></th>
-					<th><spring:message code="reservations.passager"/></th>
+					
 					<th></th><th></th>
 				</tr>
 
@@ -28,8 +28,7 @@
 					<tr>
 						<td>${reservation.id}</td>
 						<td><fmt:formatDate value="${reservation.dateResa}" pattern="dd/MM/yyyy"/></td>
-						<td>${reservation.numero}</td>	
-						<td><a href="../passager/list?idVol=${reservation.getVol()}" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-list-alt"></span>   </a></td>
+						<td>${reservation.numero}</td>
 						<td><a href="edit?id=${reservation.id}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></td>
 						<td><a href="delete?id=${reservation.id}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></td>
 						<th></th>
@@ -37,7 +36,7 @@
 				</c:forEach>
 				<tr>
 				<th></th>
-					<td colspan="4"><a href="add" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span></a></td>
+					<td colspan="5"><a href="add" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span></a></td>
 				</tr>
 			</table>
 		</fieldset>

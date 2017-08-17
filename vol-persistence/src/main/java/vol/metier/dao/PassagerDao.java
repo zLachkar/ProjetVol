@@ -8,5 +8,4 @@ import vol.metier.model.Reservation;
 public interface PassagerDao extends Dao<Passager, Long> {
 
 	Passager find(String passager);
-	List<Passager> findAll(Long idVol);
 }

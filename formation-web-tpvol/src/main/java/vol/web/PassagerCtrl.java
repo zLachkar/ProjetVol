@@ -29,14 +29,14 @@ public class PassagerCtrl {
 		
 
 		@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
-		public String list(@RequestParam(required = false) Long idVol, Model model) {
-			List<Passager> list = null;
-			if (idVol != null) {
-					list = passagerDao.findAll(idVol);
+		public String list(Model model) {
+			/*List<Passager> list = null;
+			if (idResa != null) {
+					list = passagerDao.findAll(idResa);
 			} else {
 				list = passagerDao.findAll();
-			}
-			 //passagerDao.findAll();
+			}*/
+			List<Passager> list=passagerDao.findAll();
 			
 			model.addAttribute("passagers", list);
 			return "passager/passagers";

@@ -46,7 +46,6 @@ public class PassagerDaoJpa implements PassagerDao{
 		}
 	}
 	
-
 	@Override
 	@Transactional(readOnly = true)
 	public List<Passager> findAll() {
@@ -74,16 +73,6 @@ public class PassagerDaoJpa implements PassagerDao{
 		em.remove(passager);
 		
 	}
-
-	@Override
-	public List<Passager> findAll(Long idVol) {
-		
-			Query query = em.createQuery("from Passager p where r.vol.id=:idVol");
-			//query.setParameter("idVol", idVol);
-			return query.getResultList();
-
-	}
-
 
 
 }
