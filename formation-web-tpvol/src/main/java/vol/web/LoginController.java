@@ -18,7 +18,7 @@ import vol.metier.dao.LoginDao;
 import vol.metier.model.Login;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController {
 
 	@Autowired

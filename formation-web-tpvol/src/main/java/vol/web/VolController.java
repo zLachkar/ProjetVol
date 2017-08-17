@@ -88,7 +88,7 @@ public class VolController {
 		
 		return "escale/escales";
 	}
-	@RequestMapping(value = "/COMPA", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/COMPA", method = RequestMethod.GET)
 	public String COMPA(@RequestParam Long id, Model model) {
 		List<CompagnieAerienneVol> LCAV=compagnieAerienneVolDao.findAll();
 		List<CompagnieAerienne> companiesOFvol= new ArrayList<CompagnieAerienne>();
@@ -103,7 +103,29 @@ public class VolController {
 		model.addAttribute("vol", volDao.find(id));
 		
 		return "companieaerienne/CompanieAeriennes";
+	}*/
+	@RequestMapping(value = "/COMPA", method = RequestMethod.GET)
+	public String COMPA(@RequestParam(required=false) Long id, Model model) {
+		List<CompagnieAerienneVol> LCAV=compagnieAerienneVolDao.findAll();
+		List<CompagnieAerienne> companiesOFvol= new ArrayList<CompagnieAerienne>();
+	if(id!=null){
+		
+		for(int i=0;i<LCAV.size();i++){
+			if(LCAV.get(i).getId().getVol().equals(volDao.find(id))){
+				companiesOFvol.add(LCAV.get(i).getId().getCompagnieAerienne());//hna kml
+			}
+			
+		}	
+		model.addAttribute("vol", volDao.find(id));
+	}else{
+		companiesOFvol=compagnieAerienneDao.findAll();
 	}
+		model.addAttribute("companiesOFvoles", companiesOFvol);
+		
+		
+		return "companieaerienne/CompanieAeriennes";
+	}
+
 	@RequestMapping(value = "/RESA", method = RequestMethod.GET)
 	public String RESA(@RequestParam Long id, Model model) {
 		List<Reservation> LRALL=reservationDao.findAll();
