@@ -17,7 +17,11 @@
 >>>>>>> .theirs
 </head>
 <body>
+<<<<<<< HEAD
 	<jsp:include page="/WEB-INF/menu.jsp" />
+=======
+<jsp:include page="/WEB-INF/menu.jsp" />
+>>>>>>> 2775dec... KM
 	<div class="container">
 		<fieldset>
 <<<<<<< .mine

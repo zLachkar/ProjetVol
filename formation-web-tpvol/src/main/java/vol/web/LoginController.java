@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import vol.metier.dao.ClientDao;
 import vol.metier.dao.LoginDao;
+<<<<<<< HEAD
 import vol.metier.dao.VolDao;
+=======
+
+>>>>>>> 2775dec... KM
 import vol.metier.model.Client;
 import vol.metier.model.Login;
 import vol.metier.model.Vol;
@@ -51,7 +55,11 @@ public class LoginController {
 	}
 
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
+=======
+	@RequestMapping(value = "/login/list", method = RequestMethod.GET)
+>>>>>>> 2775dec... KM
 	public String list(Model model) {
 		List<Login> list = loginDao.findAll();
 		
@@ -61,7 +69,7 @@ public class LoginController {
 		return "login/logins";
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/add", method = RequestMethod.GET)
 	public String add(Model model) {
 		
 		model.addAttribute("login", new Login());
@@ -71,7 +79,11 @@ public class LoginController {
 	}
 	
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+=======
+	@RequestMapping(value = "/login/edit", method = RequestMethod.GET)
+>>>>>>> 2775dec... KM
 	public String edit(@RequestParam Long id, Model model) {
 		model.addAttribute("login", loginDao.find(id));
 		model.addAttribute("clients", clientDao.findAll());
@@ -79,7 +91,7 @@ public class LoginController {
 		return "login/loginEdit";
 	}
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/login/save", method = RequestMethod.POST)
 	public String save(@ModelAttribute("login") @Valid Login login, BindingResult result, @RequestParam String idClient) {
 		if(result.hasErrors()) {
 			return "login/loginEdit";
@@ -97,7 +109,7 @@ public class LoginController {
 		return "redirect:list";
 	}
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/delete", method = RequestMethod.GET)
 	public String delete(@RequestParam Long id, Model model) {
 		
 		loginDao.delete(loginDao.find(id));

@@ -32,6 +32,7 @@
 <title><spring:message code="loginEdit.title"/></title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/menu.jsp" />
 <div class="container">
 		<fieldset>
 			<legend><spring:message code="loginEdit.fieldset"/></legend>
