@@ -55,7 +55,7 @@ public class VolController {
 		List<CompagnieAerienne> companiesOFvol= new ArrayList<CompagnieAerienne>();
 		List<Vol> list = volDao.findAll();
 		
-		model.addAttribute("voles", list);	
+		model.addAttribute("vols", list);	
 		return "vol/vols";
 	}
 	

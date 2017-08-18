@@ -47,7 +47,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#2ecc71;">
-			<a href="vol/"> <span class="span-text glyphicon glyphicon-road">
+			<a href = "<c:url value= "/vol/" />"> <span class="span-text glyphicon glyphicon-road">
 					<spring:message code="home.btnVol" />
 			</span>
 			</a>
@@ -70,7 +70,7 @@ a {
 		</div>
 
 		<div class="tile" style="background-color:#27ae60">
-			<a href = "<c:url value= "/list/" />"> <span
+			<a href = "<c:url value= "/login/list/" />"> <span
 				class="span-text glyphicon glyphicon-user"> <spring:message
 						code="home.btnLogin" />
 			</span>
